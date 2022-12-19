@@ -22,5 +22,5 @@ RUN pip install \
     jupyterlab \
     jupyter_http_over_ws
 
-CMD ["jupyter", "serverextension", "enable", "--py", "jupyter_http_over_ws", "&&", "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--NotebookApp.allow_origin='https://colab.research.google.com'", "--NotebookApp.port_retries=0"]
+CMD ["/bin/bash", "-c", "jupyter serverextension enable --py jupyter_http_over_ws;jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' --NotebookApp.port_retries=0"]
 EXPOSE 8888
