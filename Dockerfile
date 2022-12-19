@@ -19,7 +19,9 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pip install \
     numpy \
     torch \
-    jupyterlab
+    jupyterlab \
+    jupyter_http_over_ws
 
+CMD ["jupyter", "serverextension", "enable", "--py", "jupyter_http_over_ws"]
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--NotebookApp.allow_origin='https://colab.research.google.com'", "--NotebookApp.port_retries=0"]
 EXPOSE 8888
