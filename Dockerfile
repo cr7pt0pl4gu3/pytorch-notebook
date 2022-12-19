@@ -21,5 +21,5 @@ RUN pip install \
     torch \
     jupyterlab
 
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--NotebookApp.allow_origin='https://colab.research.google.com'", "--NotebookApp.port_retries=0"]
 EXPOSE 8888
